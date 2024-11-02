@@ -24,6 +24,7 @@ class AppWindow extends JDialog {
 	JRadioButton rbMinus;
 	JRadioButton rbMal;
 	JRadioButton rbGeteilt;
+	JRadioButton rbHoch;
 
 	JButton		button;
 
@@ -85,6 +86,7 @@ class AppWindow extends JDialog {
 		rbMinus = new JRadioButton("-");
 		rbMal = new JRadioButton("*");
 		rbGeteilt = new JRadioButton("/");
+		rbHoch = new JRadioButton("^");
 		rbPlus.setSelected(true);
 
 		ButtonGroup rbGroup = new ButtonGroup();
@@ -92,6 +94,7 @@ class AppWindow extends JDialog {
 		rbGroup.add(rbMinus);
 		rbGroup.add(rbMal);
 		rbGroup.add(rbGeteilt);
+		rbGroup.add(rbHoch);
 
 		button = new JButton("Berechnen");
 
@@ -110,6 +113,7 @@ class AppWindow extends JDialog {
 		rbMinus.setBounds(55,70,40,25);
 		rbMal.setBounds(105,70,40,25);
 		rbGeteilt.setBounds(155,70,40,25);
+		rbHoch.setBounds(205,70,40,25);
 
 		button.setBounds(300,130,100,30);
 
@@ -122,6 +126,7 @@ class AppWindow extends JDialog {
 		this.getContentPane().add(rbMinus);
 		this.getContentPane().add(rbMal);
 		this.getContentPane().add(rbGeteilt);
+		this.getContentPane().add(rbHoch);
 
 		ActionListener escListener = new ActionListener() {
 			@Override public void actionPerformed(ActionEvent e) {
@@ -175,6 +180,13 @@ class AppWindow extends JDialog {
 				result = input1 * input2;
 			} else if (rbGeteilt.isSelected()) {
 				result = input1 / input2;
+			}else if (rbHoch.isSelected()){
+				double loesung=1;
+				while(input2>=1){
+					loesung = loesung*input1;
+					input2= input2-1;}
+				result=loesung;
+
 			}
 
 			// Packe a in Ausgabefeld:
