@@ -1,5 +1,5 @@
 import java.util.*;
-public class Prim {
+public class Primzahl {
 
     static Boolean isPrime(long p_can){
         for (int counter = 2; counter * counter <= p_can; counter++) {

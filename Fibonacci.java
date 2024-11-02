@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
-public class Zahl {
+public class Fibonacci {
     public static void main (String[] args ){
         Scanner eingabe = new Scanner (System.in);
         int max = eingabe.nextInt();

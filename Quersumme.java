@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Quer {
+public class Quersumme {
     public static void main (String[] args ){
         Scanner eingabe = new Scanner (System.in);
         long max = eingabe.nextInt();

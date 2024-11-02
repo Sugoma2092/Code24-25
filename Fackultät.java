@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Fuck {
+public class Fackultät {
     public static void main (String[] args ){
         Scanner eingabe = new Scanner (System.in);
         int max = eingabe.nextInt();
