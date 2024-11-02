@@ -14,9 +14,6 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 
-// import com.apple.eawt.Application;
-
-
 class AppWindow extends JDialog {
 
 	JTextField 	textfield_input1;
@@ -30,57 +27,21 @@ class AppWindow extends JDialog {
 
 	JButton		button;
 
-
 	public AppWindow() {
 		this.getContentPane().setLayout(null);
 
 		this.initWindow();
 
 		this.addWindowListener(new WindowListener() {
-
-			public void windowClosed(WindowEvent arg0) {
-
-
-			}
-
-			public void windowActivated(WindowEvent e) {
-
-
-			}
-
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
 			}
-
-			public void windowDeactivated(WindowEvent e) {
-
-
-			}
-
-			public void windowDeiconified(WindowEvent e) {
-
-
-			}
-
-			public void windowIconified(WindowEvent e) {
-
-
-			}
-
-			public void windowOpened(WindowEvent e) {
-
-
-			}
-
-
-
 		});
 
 	}
 
 	protected void initWindow() 
 	{
-		// Instanzieren:
 		textfield_input1 = new JTextField();
 		textfield_input2 = new JTextField();
 		textfield_output = new JTextField();
@@ -101,11 +62,9 @@ class AppWindow extends JDialog {
 		button = new JButton("Berechnen");
 
 		button.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent arg0) {
 				neuBerechnen();
 			}
-
 		});
 
 		// Positionen festlegen
@@ -141,14 +100,13 @@ class AppWindow extends JDialog {
 			}
 		};
 	
-		this.getRootPane().registerKeyboardAction(escListener,
+		this.getRootPane().registerKeyboardAction(escListener
+		,
 				KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
 				JComponent.WHEN_IN_FOCUSED_WINDOW);
 		this.getRootPane().registerKeyboardAction(enterListener,
 				KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0),
 				JComponent.WHEN_IN_FOCUSED_WINDOW);
-
-
 
 		this.pack();
 	}
@@ -209,5 +167,4 @@ public class GUIRechner {
 		theAppWindow.setLocationRelativeTo(null);
 		theAppWindow.setVisible(true);
 	}
-
 }
