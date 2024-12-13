@@ -1,10 +1,16 @@
+#needs: odf odfpy pandas
+import pandas as pd
+
+# Initialize an empty DataFrame to store the data
+data = pd.DataFrame(columns=['t', 'x', 'y'])
+
 #Schieberegler
 m = 68.1
 C = 0.5
 A = 5
 vel_x = 0.1
 vel_y = 0.1
-d_t = 0.5
+d_t = 0.1
 t_max = 100
 
 # Konstanten
@@ -29,10 +35,9 @@ d_S_y = 0
 
 #Bewegung
 while t < t_max:
-    t += d_t
-    
+
     F_Luft = 0.5*S*A*C #ohne die Geschwindigkeit
-    
+
     # Bewegung in x-Richtung
     Besch_x += F-(vel_x*F_Luft)
     a_x = Besch_x / m
@@ -40,14 +45,21 @@ while t < t_max:
     v_x +=d_v_x
     d_S_x = v_x * d_t
     x+=d_S_x
-    
+
     # Bewegung in y-Richtung
-    Besch_y += F-(vel_y*F_Luft)
+    Besch_y += F-((vel_y + g)*F_Luft)
     a_y = Besch_y / m
     d_v_y= a_y * d_t
     v_y +=d_v_y
     d_S_y = v_y * d_t
     y+=d_S_y
-    
+
     # Ausgabe
     print(f"Zeit:", t, "x:", x, "y:", y)
+
+    # Add the current values of t, x, y to the DataFrame
+    data = data._append({'t': t, 'x': x, 'y': y}, ignore_index=True)
+    t += d_t
+
+# Export the DataFrame to an .ods file
+data.to_excel('output.ods', engine='odf', index=False)
