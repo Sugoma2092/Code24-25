@@ -50,9 +50,9 @@ while t < t_max:
     x+=d_S_x                            #Strecke in x Richtung
 
     # Bewegung in y-Richtung
-    Besch_y += F-((vel_y - g)*F_Luft)   #Beschleunigung in y Richtung
+    Besch_y += F-((vel_y + g)*(vel_y + g)*F_Luft)   #Beschleunigung in y Richtung
     a_y = Besch_y / m                   #a in y Richtung
-    d_v_y= a_y * d_t                    #Berechnung von Delta V in y Richtung
+    d_v_y= (a_y+g) * d_t                    #Berechnung von Delta V in y Richtung
     v_y +=d_v_y                         #Berechnung der neuen Geschwindigkeit in y Richtung
     d_S_y = v_y * d_t                   #Berechnung von Delta S in y Richtung
     y+=d_S_y                            #Strecke in y Richtung
