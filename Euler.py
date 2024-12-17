@@ -4,6 +4,8 @@
 # pip install pandas
 import pandas as pd
 
+print("Try 0")
+
 # Initialize an empty DataFrame to store the data
 data = pd.DataFrame(columns=['t', 'x', 'y'])
 
@@ -50,12 +52,12 @@ while t < t_max:
 
     # Bewegung in y-Richtung
     F_Luft_Y = 0.5 * S * A * C * v_y * v_y     
-    Besch_y += F - F_Luft_Y - m * g     #Beschleunigung in y Richtung - g
-    a_y = Besch_y / m                   #a in y Richtung
-    d_v_y = a_y * d_t                   #Berechnung von Delta V in y Richtung
-    v_y += d_v_y                        #Berechnung der neuen Geschwindigkeit in y Richtung
-    d_S_y = v_y * d_t                   #Berechnung von Delta S in y Richtung
-    y += d_S_y                          #Strecke in y Richtung
+    Besch_y = F - F_Luft_Y - m * g  # Reset Besch_y in each iteration
+    a_y = Besch_y / m               # a in y Richtung
+    d_v_y = a_y * d_t               # Berechnung von Delta V in y Richtung
+    v_y += d_v_y                    # Berechnung der neuen Geschwindigkeit in y Richtung
+    d_S_y = v_y * d_t               # Berechnung von Delta S in y Richtung
+    y += d_S_y                      # Strecke in y Richtung
 
     # Ausgabe
     print(f"Zeit:", t, "x:", x, "y:", y)#Output the current position and time
