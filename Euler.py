@@ -13,7 +13,7 @@ C = 0.8                                 #Spezieller Luftwiederstandkoeffizient (
 A = 60                                  #Querschnittfläche in cm²
 vel_x = 0.1                             #Start X-Geschwindigkeit
 vel_y = 0.1                             #Start Y-Geschwindigkeit
-d_t = 1                               #Zeitschritt
+d_t = 0.1                               #Zeitschritt
 t_max = 100                             #Maximale Zeit
 
 # Konstanten
