@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Zahlenrten {
+public class Zahlenraten {
 public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
         int Zufallszahl = (int) (101 * Math.random()); //Zahl zwischen 0 und 100 generiert;
