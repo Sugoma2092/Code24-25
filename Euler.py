@@ -1,4 +1,4 @@
-#Aufgabe 3c
+#Aufgabe 3d
 #pip install odf odfpy pandas matplotlib
 
 import pandas as pd
@@ -36,7 +36,7 @@ Y_Punkte = []       #Liste für Y-Koordinaten für Matplotlib
 t_list = []         #Liste für die Zeit
 
 #Berechnen der Trajektorie
-while x <= 10 and y <= 3:
+while t<= t_max:
 
     #Berechnen der Bewegung in X-Richtung
     F_Luft_x = k * vel_x**2     #Berechnung der Luftwiederstandskraft in X-Richtung
@@ -74,7 +74,7 @@ data.to_excel('Waagerechter_Wurf.ods', engine='odf', index=False)
 #Einrichten von Matplotlib für das Zeichnen der Trajektorie
 plt.xlabel('X-Richtung')
 plt.ylabel('Y-Richtung')
-plt.title('Waagerechter Wurf')
+plt.title('Waagerechter Wurf \n Endgeschwindigkeit: ' + "{:10.4f}".format(vel_y) + 'm/s')
 
 #Anzeigen des Trajektorie-Plots
 plt.plot(X_Punkte, Y_Punkte, 'b-')
