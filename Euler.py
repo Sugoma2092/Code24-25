@@ -1,4 +1,4 @@
-#Aufgabe 3b
+#Aufgabe 3c
 #pip install odf odfpy pandas matplotlib
 
 import pandas as pd
@@ -11,8 +11,8 @@ data = pd.DataFrame(columns=['t', 'x', 'y'])
 #Definition physikalischer Konstanten und Anfangsbedingungen
 m = 2               #Masse (kg)
 C = 0.45            #Spezieller Luftwiederstandskoeffizient ((0;2])
-A = 0.1963          #Querschnittsfläche (m²)
-vel_x = 10          #X-Anfangsgeschwindigkeit (m/sec)
+A = 0.1963          #Querschnittsfläche (m²) Formel: 2*pi*r #A=0.1963 für r=2,5cm
+vel_x = 15          #X-Anfangsgeschwindigkeit (m/sec)
 vel_y = 0           #Y-Anfangsgeschwindigkeit (m/sec)
 d_t = 0.01          #Zeitschritt (sec)
 t_max = 2.5         #Maximale Zeit (sec)
@@ -36,7 +36,7 @@ Y_Punkte = []       #Liste für Y-Koordinaten für Matplotlib
 t_list = []         #Liste für die Zeit
 
 #Berechnen der Trajektorie
-while x <= 25:
+while x <= 10 and y <= 3:
 
     #Berechnen der Bewegung in X-Richtung
     F_Luft_x = k * vel_x**2     #Berechnung der Luftwiederstandskraft in X-Richtung
