@@ -1,4 +1,4 @@
-#Aufgabe 3a
+#Aufgabe 3b
 #pip install odf odfpy pandas matplotlib
 
 import pandas as pd
@@ -36,7 +36,7 @@ Y_Punkte = []       #Liste für Y-Koordinaten für Matplotlib
 t_list = []         #Liste für die Zeit
 
 #Berechnen der Trajektorie
-while y <= 10:
+while x <= 25:
 
     #Berechnen der Bewegung in X-Richtung
     F_Luft_x = k * vel_x**2     #Berechnung der Luftwiederstandskraft in X-Richtung
